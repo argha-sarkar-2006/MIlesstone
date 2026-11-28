@@ -1,0 +1,44 @@
+{
+  "project": "MilestoneLock",
+  "entries": [
+    {
+      "date": "2026-11-28",
+      "title": "Dedicated role page modules",
+      "type": "frontend",
+      "added": [
+        "Dedicated TypeScript page components and role-specific page data for every Organization Admin, Client, and Freelancer dashboard route in the sitemap.",
+        "Separate Admin Payments route alongside Escrow."
+      ],
+      "changed": [
+        "Replaced the shared role-and-page conditional view with dedicated page components using a reusable presentation frame.",
+        "Kept Super Admin and restricted operations consoles outside the three-role scope."
+      ],
+      "validation": {
+        "typecheck": "passed",
+        "productionBuild": "passed"
+      }
+    },
+    {
+      "date": "2026-11-28",
+      "title": "Role-based TypeScript frontend",
+      "type": "frontend",
+      "added": [
+        "Separate Organization Admin, Client, and Freelancer applications under src/roles/.",
+        "Direct role routes and role-specific section URLs.",
+        "TypeScript configuration, strict type checking, typed navigation, and role workspace views based on the dashboard sitemap.",
+        "Visible demo-data label and preview-only workflow actions."
+      ],
+      "changed": [
+        "Migrated frontend source and dashboard data from JavaScript/JSX to TypeScript/TSX.",
+        "Removed dashboard role-switch controls.",
+        "Expanded role navigation for core project and milestone workflows.",
+        "Clarified that client milestone approval is separate from settlement authorization."
+      ],
+      "validation": {
+        "typecheck": "passed",
+        "productionBuild": "passed",
+        "liveBrowser": "not run: sandbox denied the Vite local port bind and no Reticle session was connected"
+      }
+    }
+  ]
+}

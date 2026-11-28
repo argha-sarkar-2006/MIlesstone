@@ -282,6 +282,20 @@ MIlesstone/
 
 ## Getting started
 
+### Frontend dashboards
+
+The React SPA exposes a dedicated entry URL for each dashboard role:
+
+- Organization admin: `/admin` (for example, `/admin/projects`)
+- Client: `/client` (for example, `/client/reviews`)
+- Freelancer: `/freelancer` (for example, `/freelancer/submissions`)
+
+Run `npm install` and `npm run dev` from `MIlesstone/`. Each URL opens a fixed role application; the dashboard has no role-switching panel. The frontend uses TypeScript throughout. Each dashboard page has its own route component under `src/roles/{admin,client,freelancer}/pages/<page>/page.tsx`; each role has its own `pages/pageData.ts`. Overview components live under `src/components/admin`, `client`, and `freelancer`; shared layout and presentation components live under `src/components/`.
+
+The role page folders follow the dashboard sitemap while adapting its proposed Next.js route groups to this repository's Vite React SPA. Shared authentication and operational consoles are outside the three dashboard roles currently included. Pages use local demo records; action dialogs are previews and do not call a backend, payment provider, or smart contract.
+
+`npm run typecheck` checks the TypeScript application code, and `npm run build` creates the production bundle. Dashboard records are currently local demo data; workflow buttons preview actions and do not execute payments or alter on-chain state.
+
 ```bash
 cd web3
 npm install
